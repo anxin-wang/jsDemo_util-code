@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题文档</title>
+		<link rel="stylesheet" href="../../bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/global.css" />
+		
+		
+	</head>
+	<body class="body_bg">
+    <div class="container-fluid">
+     <div class="row body_bg">
+             <div class="col-xs-5 mrtext_1">审批意见</div>
+             <div class="col-xs-7 mrtext_2">
+                    <span class="right_list"></span>
+                </div>
+        </div>
+        </div>
+   <div id="sx_advice_window1" class="col-xs-6">
+            <div class="sx_row">
+                <span class="sx_row_text">审批部门</span>
+            </div>
+            <div class="sx_row sx_row_on">
+                <span class="sx_row_text">主办公部门</span>
+            </div>
+            <div class="sx_row">
+                <span class="sx_row_text">快审部门</span>
+            </div>
+            <div class="sx_row">
+                <span class="sx_row_text">合规与风险管理总部</span>
+            </div>
+            <div class="sx_row">
+                <span class="sx_row_text">办公室处</span>
+            </div>
+            <div class="sx_row">
+                <span class="sx_row_text">公司领导</span>
+            </div>
+        </div>
+</body>
+	<script src="../../jquery/jquery-1.11.1.js"></script>
+	<script src="../../bootstrap/bootstrap.min.js"></script>
+	<script>
+		$(function () {
+			function pop_window1(winId) {
+		        var $pop = $("#" + winId);
+		        var dheight = $(document).height();
+		        $pop.css({ "display": "block", "height": dheight - 60 });
+		        $pop.animate({ "top": "60px" },'slow');
+		    }
+			$(".right_list").on("click", function () {
+		        pop_window1("sx_advice_window1");
+		    });
+		    $(".sx_row").on("click", function () {
+		        $(".sx_row").removeClass("sx_row_on");
+		        $(this).toggleClass("sx_row_on");
+		    });
+		    
+		});
+	</script>
+</html>

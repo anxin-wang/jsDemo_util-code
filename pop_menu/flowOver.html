@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+    
+    <link type="text/css" href="bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="all"/>
+
+    <link type="text/css" href="css/global.css" rel="stylesheet" media="all" />
+    <!--<link type="text/css" href="css/main.css" rel="stylesheet" media="screen and (min-width:1000px)" />-->
+
+    <script type="text/javascript" src="js/jquery-1.11.1.js" ></script>
+    <script type="text/javascript" src="bootstrap-3.2.0-dist/js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="js/global.js" ></script>
+    <link href="css/bootstrap-overwrite.css" rel="stylesheet" type="text/css" />
+    <title></title>
+
+</head>
+<body>
+    <div class="container-fluid flow_over">
+        <div class="top_block dark_blue_bg">
+            <div class="prev_page_icon"></div>
+            <div class="top_text  color_white">审批-申请单</div>
+            <div class="top_msg"><img src="images/refresh_icon.png" class="refresh_icon_img"/></div>
+        </div>
+        <div class="bs">
+            <div class="clearfix">
+                <span class="smile_face"></span>
+                <span class="smile_text">
+                    你已将审批成功提交<br /><span id="num" class="color_blue">5</span>秒后将自动调整
+                </span>
+            </div>
+            <div class="row">
+                <a class="back_workstation" href="workflow1.html">返回工作台</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var timer = '';
+
+        function set_num() {
+            var cur_num = Number($("#num").text());
+
+            if (cur_num <= 0) {
+                clearTimeout(timer);
+                window.location.href="workflow1.html";
+            } else {
+                $("#num").text(cur_num - 1);
+            }
+        }
+        
+        timer=setInterval(set_num, 1000);
+
+    </script>
+</body>
+</html>

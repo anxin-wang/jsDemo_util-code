@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>自定义Checkbox</title>
+		<link rel="stylesheet" href="../framework_research/bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/css/global.css" />
+		
+		
+	</head>
+	
+<body class="body_bg">
+		<div class="page_tit">
+            <span class="choose_elm"></span><span class="ptit_text color_blue">选择下一步节点</span>
+        </div>
+        <div class="advice_window">
+            <div class="page_tit radio_father">
+                <span class="radio_ck2"></span><span class="ptit_text">通过审批</span>
+            </div>
+            <div class="page_tit radio_father">
+                <span class="radio_ck2"></span><span class="ptit_text">送部门文书处理</span>
+            </div>
+            <div class="page_tit radio_father">
+                <span class="radio_ck2"></span><span class="ptit_text">退回起草人</span>
+            </div>
+            <div class="page_tit radio_father">
+                <span class="radio_ck2"></span><span class="ptit_text">结束文档</span>
+            </div>
+        </div>
+
+	<script src="../framework_research/jquery/jquery-1.11.1.js"></script>
+	<script src="../framework_research/bootstrap/bootstrap.min.js"></script>
+	<script>
+		$(function () {
+			//radiobox
+		    $(".radio_father").on('touchstart', function () {
+		        $(this).parent().find(".radio_father").removeClass("radio_checked");
+		        $(this).addClass("radio_checked");
+		    });
+		});
+	</script>
+</body>
+</html>

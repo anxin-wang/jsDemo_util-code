@@ -1,0 +1,93 @@
+<!--js 点击页面其他地方关闭弹出层-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>下拉列表</title>
+		<style type="text/css">
+			
+
+			.select_hide {
+			display: none;
+			position: absolute;
+			background: #3897c8;
+			top: 125px;
+			margin-left: 14px;
+			height: 40px;
+			width: 183px;
+			padding-left: 16px;
+			padding-top: 10px;
+			}
+			.select_hide input {
+			width: 115px;
+			border: solid 1px #fff;
+			background: #fff;
+			height: 30px;
+			}
+			.am{border:solid 1px #dce9ef !important;cursor: pointer;background: url(EIP_home_search_lj.png) no-repeat 160px center;border:1px #ccc solid;display:block;cursor:pointer;width:183px;height: 30px;font-size:14px;color:#73ccf4;margin-left:14px;padding-left:16px;font-style:italic;}
+			.bm{border: none;width:200px;margin-left:14px;position:absolute;z-index:99;font-size:13px;color:#fff;background: url(select_bg_03.jpg) no-repeat 0 0 #3897c8;}
+			.bm span{display:block; height:36px; line-height:36px; padding-left:16px; width:184px; color:#fff;}
+			.bm span em{padding-left:20px; display:block; background:url(add_03.jpg) no-repeat 0 center; font-style:normal;}
+			.select_hide{display:none; position:absolute; background:#3897c8; top:125px; margin-left:14px; height:40px; width:183px; padding-left:16px; padding-top:10px;}
+			.select_hide input{width:115px; border:solid 1px #fff; background:#fff; height:30px;}
+			.select_hide button{background:none; border:none; width:50px; height:30px; color:#fff;}
+			.select_hide .button{background:#ffa800; width:50px; height:30px; float:right; margin-right:10px; text-align:center;}
+		</style>
+	</head>
+	<body>
+		<h1>例子2</h1>
+		<form>
+			<!--新增小框-->
+			<div class="select_hide">
+				<input type="text" value="" />
+				<div class="button">
+					<button type="submit" class="ak-EIP-home-right-top-search-button">
+						submit
+					</button>
+				</div>
+			</div>
+			<!--下拉列表-->
+			<input onClick='hide(event,"HMF-1")' type="text" value="I want to go to..." id="am" class="am" />
+			<div id="HMF-1" style="display: none " class="bm">
+				<span id="a1" onClick="pick(event,'测试一')" onMouseOver="bgcolor('a1')" onMouseOut="nocolor('a1')" class="cur">HR Site</span>
+				<span id="a2" onClick="pick(event,'测试二')" onMouseOver="bgcolor('a2')" onMouseOut="nocolor('a2')" class="cur">HR Site</span>
+				<span id="a3" onClick="pick(event,'测试三')" onMouseOver="bgcolor('a3')" onMouseOut="nocolor('a3')" class="cur">HR Site</span>
+				<span id="a4" onClick="pick(event,'测试四')" onMouseOver="bgcolor('a4')" onMouseOut="nocolor('a4')" class="cur"><em>Add new link</em></span>
+			</div>
+		</form>
+		<script type="text/javascript" >
+			function $$$$$(_sId) {
+				return document.getElementById(_sId);
+			}
+
+			function hide(evt, _sId) {
+				evt.stopPropagation ? evt.stopPropagation() : evt.cancelBubble = true;
+				$$$$$(_sId).style.display = $$$$$(_sId).style.display == "none" ? "" : "none";
+			}
+
+			function hideAll(_sId) {
+				$$$$$(_sId).style.display = "none";
+			}
+
+			function pick(evt,v) {
+				document.getElementById('am').value = v;
+				hide(evt,'HMF-1')
+			}
+
+			function bgcolor(id) {
+				document.getElementById(id).style.background = "url(images/select_span_h_03.png) no-repeat 0 0";
+				document.getElementById(id).style.color = "#fff";
+			}
+
+			function nocolor(id) {
+				document.getElementById(id).style.background = "";
+				document.getElementById(id).style.color = "#fff";
+			}
+
+
+			document.onclick = function() {
+				hideAll('HMF-1');
+			}
+		</script>
+		 
+	</body>
+</html>
