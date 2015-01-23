@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title></title>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--[if lt IE 8]>
+    <style>
+        .compatable{
+            width:100%;
+            background-color:#fffce7;
+            border-bottom:1px solid #f8cc7e;
+        }
+        .compatable p{
+            width:670px;
+            margin:0px auto;
+            padding:15px 0;
+            color:#edaa32;
+            font-size: 16px;
 
-		<script type="text/javascript">
-			var Sys = {};
-			var ua = navigator.userAgent.toLowerCase();
-			var s;
-			( s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] : ( s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] : ( s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] : ( s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] : ( s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+        }
+        .compatable p span{
+            vertical-align:-6px;
+            _vertical-align:6px;
+        }
+        .topbar{
+            top:64px;
+        }
+        .header{
+            padding-top:80px;
+        }
+        .icon-warning{
+            height:32px;
+            width:32px;
+            background: url(../images/warning.png) top left;
+            margin-right:10px;
+            display: inline-block;
+        }
+    </style>
 
-			//以下进行测试
-			if (Sys.ie)
-				document.write('IE: ' + Sys.ie);
-			if (Sys.firefox)
-				document.write('Firefox: ' + Sys.firefox);
-			if (Sys.chrome)
-				document.write('Chrome: ' + Sys.chrome);
-			if (Sys.opera)
-				document.write('Opera: ' + Sys.opera);
-			if (Sys.safari)
-				document.write('Safari: ' + Sys.safari);
+    <![endif]-->
+</head>
+<body>
+<script src="jquery.min.js"></script>
+<script>
+    $(function(){
+        var ie = ! + "\v1"; //ie6,ie7
+        var ie=!'1'[0];//ie6,ie7
+        var ie = ! - [1,];   //ie6,ie7,ie8,最短的IE
 
-			// 或:
-			// KindEditor开源编辑器源码中的检测浏览器的方法:
-			// KE = {};
-			// KE.browser = (function () {
-			// var ua = navigator.userAgent.toLowerCase();
-			// return {
-			// VERSION:ua.match(/(msie|firefox|webkit|opera)[\/:\s](\d+)/) ? RegExp.$2 : "0",
-			// IE:(ua.indexOf("msie") > -1 && ua.indexOf("opera") == -1),
-			// GECKO:(ua.indexOf("gecko") > -1 && ua.indexOf("khtml") == -1),
-			// WEBKIT:(ua.indexOf("applewebkit") > -1),
-			// OPERA:(ua.indexOf("opera") > -1)
-			// };
-			// })();
-		</script>
-	</head>
+        //最短JS判断IE6/IE7/IE8系列的写法 - dtdxrk
+        //常用的
+        var isIE=!!window.ActiveXObject;
+        var isIE6=isIE&&!window.XMLHttpRequest;
+        var isIE8=isIE&&!!document.documentMode;
+        var isIE7=isIE&&!isIE6&&!isIE8;
+
+        //最短的ie6
+
+        var ie6=!-[1,]&&!window.XMLHttpRequest;
+
+        //浏览器升级提示,如果是IE6或者IE7提示
+        if ( ! + "\v1") {
+            $('<div class="compatable"> <p> <i class="icon-warning"></i> <span>你的浏览器太古老，无法正常使用<em>永利宝</em>。建议升级到 <a href="http://www.microsoft.com/zh-cn/download/internet-explorer-8-details.aspx" target="_blank">IE8</a> / <a href="http://www.google.cn/intl/zh-CN/chrome/browser/" target="_blank">谷歌浏览器</a>等现代浏览器。 </span> </p> </div>').prependTo($("body"));
+        }
+    })
+
+</script>
+
+</body>
 </html>
