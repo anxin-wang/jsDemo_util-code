@@ -1,0 +1,1 @@
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
