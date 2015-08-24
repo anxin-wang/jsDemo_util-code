@@ -35,11 +35,16 @@
             margin-right:10px;
             display: inline-block;
         }
+
     </style>
 
     <![endif]-->
+    <style>
+        input[type=text]::-ms-clear{ display: none; }
+    </style>
 </head>
 <body>
+<input type="text" value="2"/>
 <script src="jquery.min.js"></script>
 <script>
     $(function(){
@@ -59,7 +64,7 @@
         var ie6=!-[1,]&&!window.XMLHttpRequest;
 
         //浏览器升级提示,如果是IE6或者IE7提示
-        if ( ! + "\v1") {
+        if ( ! + "\v1" && !"1"[0]) {
             $('<div class="compatable"> <p> <i class="icon-warning"></i> <span>你的浏览器太古老，无法正常使用<em>永利宝</em>。建议升级到 <a href="http://www.microsoft.com/zh-cn/download/internet-explorer-8-details.aspx" target="_blank">IE8</a> / <a href="http://www.google.cn/intl/zh-CN/chrome/browser/" target="_blank">谷歌浏览器</a>等现代浏览器。 </span> </p> </div>').prependTo($("body"));
         }
     })
