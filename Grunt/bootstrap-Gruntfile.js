@@ -433,7 +433,7 @@ grunt.registerTask('build-raw-files', 'Add scripts/less files to customizer.', f
 var banner = grunt.template.process('<%= banner %>');
 generateRawFiles(grunt, banner);
 });
-grunt.registerTask('commonjs', 'Generate CommonJS entrypoint module in dist dir.', function () {
+grunt.registerTask('commonjs', 'Generate CommonJS entrypoint modules in dist dir.', function () {
 var srcFiles = grunt.config.get('concat.bootstrap.src');
 var destFilepath = 'dist/js/npm.js';
 generateCommonJSModule(grunt, srcFiles, destFilepath);

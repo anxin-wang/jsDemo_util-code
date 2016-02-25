@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title></title>
+  <style>
+    /* external links
+The ^= specifies that we want to match links that begin with the http://
+*/
+    a[href^="http://"]{
+      padding-right: 20px;
+      background: url(external.gif) no-repeat center right;
+    }
+
+    /* emails
+    The ^= specifies that we want to match links that begin with the mailto:
+    */
+    a[href^="mailto:"]{
+      padding-right: 20px;
+      background: url(email.png) no-repeat center right;
+    }
+
+    /* pdfs
+    The $= specifies that we want to match links whose hrefs end with ".pdf".
+    */
+    a[href$=".pdf"]{
+      padding-right: 20px;
+      background: url(pdf.png) no-repeat center right;
+    }
+    /* zip
+    Same as above but for zip files and it adds an icon at the right of the link. Therefore the :after
+    */
+    a[href$=".zip"]:after{
+      content: url(icons/zip.png);
+    }
+
+  </style>
+    <link rel="stylesheet" href="">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body>
+
+
+</body>
+</html>
